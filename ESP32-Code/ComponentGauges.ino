@@ -103,7 +103,7 @@ void loop() {
         tft.setTextDatum(BR_DATUM);
         tft.setTextColor(COL_TEXT, COL_BG);
         if (!isnan(watt))
-          tft.drawString("   " + String(watt, 1) + " W", 315, 235, 2);
+          tft.drawString("   " + String(watt, 1) + " W", 315, 235, 2); //the spaces are to overwrite the previous value if it was longer
       }
 
       buffer = "";
