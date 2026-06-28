@@ -32,7 +32,7 @@ The ESP32 receives JSON data via **USB Serial** and renders a modern dashboard w
 
 Optional:
 
-* 3D printed enclosure
+* 3D printed enclosure (Files in `/3D-printing-files`)
 
 ---
 
@@ -50,20 +50,7 @@ ESP:
 * Arduino IDE
 * ESP32 Arduino Core
 * TFT_eSPI
-* ArduinoJson
-
----
-
-# Dashboard Layout
-
-```
-+--------------------------------+
-|        CPU | RAM | Disk        |
-|            |     |             |
-|            |     |             |
-| Temp                  CPU Watt |
-+--------------------------------+
-```
+* ArduinoJsons
 
 ---
 
@@ -140,19 +127,7 @@ python3 esp_systemdata.py
 
 ## 5. (Recommended) Run as a systemd service
 
-Create:
-
-```
-/etc/systemd/system/espdisplay.service
-```
-
-Then:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable espdisplay
-sudo systemctl start espdisplay
-```
+Instructions in `/Systemside-Code/systemd-service.md`
 
 ---
 
@@ -165,48 +140,6 @@ The dashboard displays **Intel CPU Package Power** using the Linux RAPL interfac
 ```
 
 If RAPL is unavailable, the watt display will remain empty.
-
----
-
-# Repository Structure
-
-```
-.
-├── ESP32/
-│   └── ESP_Dashboard.ino
-│
-├── Server/
-│   └── esp_systemdata.py
-│
-├── docs/
-│   ├── dashboard.jpg
-│   └── wiring.png
-│
-└── README.md
-```
-
----
-
-# Future Ideas
-
-* Network throughput
-* SSD temperature
-* GPU statistics
-* Multiple dashboard pages
-* Touchscreen support
-* Animated transitions
-* Brightness control
-* Automatic USB port detection
-* Docker/LXC monitoring
-* Historical graphs
-
----
-
-# License
-
-MIT License
-
-Feel free to modify and improve this project.
 
 ---
 
