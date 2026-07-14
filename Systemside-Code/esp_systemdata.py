@@ -67,7 +67,7 @@ def main():
         ser.write((json.dumps(data) + "\n").encode("utf-8"))
         ser.flush()
 
-        time.sleep(3)   # <<--- HIER ist das 3-Sekunden-Intervall
+        time.sleep(3)   # 3 second interval
 
 
 if __name__ == "__main__":
